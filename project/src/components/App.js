@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from './SearchBar';
+
 import MovieList from './MovieList';
 
 
@@ -22,7 +22,7 @@ class App extends React.Component  {
                 "name": "The Matrix Reloaded",
                 "rating": "6.9",
                 "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/jBegA6V243J6HUnpcOILsRvBnGb.jpg",
-                "overview": "Six months after the events depicted in The Matrix, Neo has proved to be a good omen for the free humans, as more and more humans are being freed from the matrix and brought to Zion, the one and only stronghold of the Resistance. Neo himself has discovered his superpowers including super speed, ability to see the codes of the things inside the matrix and a certain degree of pre-cognition.",
+                "overview": "Six months after the events depicted in The Matrix, Neo has proved to be a good omen for the free humans, ability to see the codes of the things inside the matrix and a certain degree of pre-cognition.",
 
             },
             {
@@ -37,18 +37,32 @@ class App extends React.Component  {
 
     }
 
+    // this is event functione and set state part next part is being update button side in MoveLisr.js page
+    deleteMovie = (movie)=>{
+        const newMovieList = this.state.movies.filter(
+            m =>m.id !==movie.id
+        );
+        this.setState ({
+            movies : newMovieList
+        })
+
+    }
+
 
     render() {
         return (
             
             <div className="container">
                 <div className="row">
-                    <div className="col=lg-12">
-                        <SearchBar/>
+                    <div className="col-lg-12">
+                        
                     </div>
                 </div>
                 
-                        <MovieList/>
+                        <MovieList 
+                         movies={this.state.movies} 
+                         // we have to add new prop here to connect app.js page and movielist page each other
+                         deleteMovieProp={this.deleteMovie} />
                    
                 
 
