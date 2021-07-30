@@ -12,7 +12,7 @@ const  MovieList =  (props) => {
         return (
             <div className="row">
 
-
+                
                 {props.movies.map((movie) => (
 
                     <div className="col-lg-4" key={movie.id}>

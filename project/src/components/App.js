@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MovieList from './MovieList';
+import SearchBar from './SearchBar';
 
 
 
@@ -33,11 +34,13 @@ class App extends React.Component  {
                 "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qHCZ6LjtmqWDfXXN28TlIC9OppK.jpg",
 
             }
+            
         ]
 
     }
 
     // this is event functione and set state part next part is being update button side in MoveLisr.js page
+    // this is function to delete movie with onclick
     deleteMovie = (movie)=>{
         const newMovieList = this.state.movies.filter(
             m =>m.id !==movie.id
@@ -55,7 +58,7 @@ class App extends React.Component  {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                        
+                       <SearchBar />
                     </div>
                 </div>
                 
