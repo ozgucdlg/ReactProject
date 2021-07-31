@@ -35,6 +35,37 @@ class App extends React.Component  {
 
     }
 
+
+  /*  FETCH API 
+   deleteMovie =  async (movie)=>{
+       const baseUrl =  `http://localhost:30002/movies/${movie.id}`
+       await fetch(baseUrl, {
+           method:"DELETE"
+       })
+        const newMovieList = this.state.movies.filter(
+            m =>m.id !==movie.id
+        );
+        this.setState ({
+            movies : newMovieList
+        })
+
+    } */
+
+     /*  AXIOS  API 
+    deleteMovie =  async (movie)=>{
+       axios.delete(`http://localhost:30002/movies/${movie.id}`)
+        const newMovieList = this.state.movies.filter(
+            m =>m.id !==movie.id
+        );
+        this.setState ({
+            movies : newMovieList
+        })
+
+    } */
+
+
+
+
     searchMovie= (event)=>{
         // console.log(event.target.value);
         this.setState({searchQuery:event.target.value});
