@@ -97,7 +97,7 @@ class App extends React.Component  {
                        <SearchBar 
                        searchMovieProp={this.searchMovie}
                        />
-                    </div>
+                    </div>  
                 </div>
                 
                         <MovieList 
