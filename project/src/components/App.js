@@ -4,6 +4,7 @@ import MovieList from './MovieList';
 import SearchBar from './SearchBar';
 import addMovie from './AddMovie';
 import { BrowserRouter as Roueter, Switch, Route } from 'react-router-dom';
+import AddMovie from './AddMovie';
 
 
 
@@ -65,6 +66,15 @@ class App extends React.Component {
     searchMovie = (event) => {
         // console.log(event.target.value);
         this.setState({ searchQuery: event.target.value });
+
+
+    addMovie = async (movie) => {
+        await axios.post(`http://localhost:3002/movies/`, movie)
+        this.setState(
+            state => ({movies:state.movies.concat([movie])}),
+        )
+
+        }
     }
 
     render() {
@@ -101,7 +111,17 @@ class App extends React.Component {
                         </Route>
 
                         
-                        <Route path="/add" component={AddMovie} />
+                        <Route path="/"  render={({history}) => (
+
+                            <AddMovie 
+                            onAddMovie={(movie) => {this.addMovie(movie)
+                                history.push("/")}}
+                            />
+
+
+                        )}>                            
+                        </Route>
+
 
                     </Switch>
 
