@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SearchBar extends React.Component {
 
@@ -9,24 +9,27 @@ class SearchBar extends React.Component {
     }
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleFormSubmit}>
                 <div className="form-row mb-5" >
-                    <div className="col-10">                        
-                        <input onChange={this.props.searchMovieProp} type="text"
-                            className="form-control" placeholder="Search a movie *"
+                    <div className="col-10">
+                        <input
+
+                            onChange={this.props.searchMovieProp}
+                            type="text" className="form-control"
+                            placeholder="Search a movie *"
+
                         />
                     </div>
                     <div className="col-2">
-                        <Link 
+                        <Link
                             to="/add"
                             type="button"
                             className="btn btn-md btn-danger"
                             style={{ float: 'right' }}> Add Movie
                         </Link>
-                    </div>            
-
+                    </div>
                 </div>
-            </form> 
+            </form>
 
         );
     }

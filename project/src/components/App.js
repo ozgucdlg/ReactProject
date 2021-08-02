@@ -2,13 +2,10 @@ import React from 'react';
 
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
-import addMovie from './AddMovie';
-import { BrowserRouter as Roueter, Switch, Route } from 'react-router-dom';
 import AddMovie from './AddMovie';
-
-
-
-
+import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import EditMovie from './EditMovie';
 
 class App extends React.Component {
 
@@ -18,10 +15,10 @@ class App extends React.Component {
     }
 
     async componentDidMount() {
-        const baseUrl = "http://localhost:3002/movies";
-        const response = await fetch(baseUrl);
+        const baseURL = "http://localhost:3002/movies";
+        const response = await fetch(baseURL);
         console.log(response);
-        console.data = await response.json();
+        const data = await response.json();
         console.log(data);
         this.setState({ movies: data })
     }
@@ -68,7 +65,7 @@ class App extends React.Component {
         this.setState({ searchQuery: event.target.value });
 
 
-    addMovie = async (movie) => {
+    AddMovie = async (movie) => {
         await axios.post(`http://localhost:3002/movies/`, movie)
         this.setState(
             state => ({movies:state.movies.concat([movie])}),
@@ -83,7 +80,9 @@ class App extends React.Component {
             (movie) => {
                 return movie.name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1;
             }
-        )
+        ).sort( (a,b) => {
+                return a.id < b.id ? 1 : a.id > b.id ? -1 : 0;
+        } ); 
 
         return (
 
@@ -121,6 +120,8 @@ class App extends React.Component {
 
                         )}>                            
                         </Route>
+
+                        <Route path="/edit/:id" component={EditMovie} /> 
 
 
                     </Switch>
