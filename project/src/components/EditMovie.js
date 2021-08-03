@@ -26,11 +26,39 @@ class EditMovie extends React.Component {
            imageURL:movie.imageURL
        })
     }
+    onInputChange = (event) =>{
+       // console.log(event.target.name);
+        //console.log(event.target.value);
+
+        this.setState({
+            [event.target.name] : event.target.value
+        })
+    }
 
     handleFormSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault(); 
         
+        /* const name = this.state.name;
+        const rating = this.state.rating;
+        const overview = this.state.overview;
+        const imageURL = this.state.imageURL;
+
+        asagida daha basit yontemi var, biz destructure olarak kullandik(asagidaki destructurdir)
+ */
+        const {name, rating, overview, imageURL } = this.state;
+
+        const id = this.props.match.params.id;
+
+        const updatedMovie= {
+            name:name,
+            rating:rating,
+            overview:overview,
+            imageURL:imageURL 
+        }
+        this.props.onEditMovie(id, updatedMovie);
+        this.props.history.push('/');                
     }
+    
     render() {
         return (
             <div className="container">
@@ -42,7 +70,8 @@ class EditMovie extends React.Component {
                             <input type="text"
                                 className="form-control"
                                 name="name" 
-                                value={this.state.name}/>
+                                value={this.state.name}
+                                onChange={this.onInputChange}/>
                         </div>
                         <div className="form-group col-md-2">
                             <label htmlFor="inputRating">Rating</label>
@@ -50,7 +79,8 @@ class EditMovie extends React.Component {
                                 type="text"
                                 className="form-control"
                                 name="rating"
-                                value={this.state.rating}/> 
+                                value={this.state.rating}
+                                onChange={this.onInputChange}/> 
                         </div>
                     </div>
                     <div className="form-row">
@@ -60,7 +90,8 @@ class EditMovie extends React.Component {
                                 type="text"
                                 className="form-control"
                                 name="imageURL"
-                                value={this.state.imageURL} />
+                                value={this.state.imageURL}
+                                onChange={this.onInputChange} />
                         </div>
                     </div>
                     <div className="form-row">
@@ -70,10 +101,11 @@ class EditMovie extends React.Component {
                                 className="form-control"
                                 name="overview" 
                                 rows="5"
-                                value={this.state.overview}></textarea>
+                                value={this.state.overview}
+                                onChange={this.onInputChange}></textarea>
                         </div>
                     </div>
-                    <input type="submit" className="btn btn-danger btn-block" value="Add Movie" />
+                    <input type="submit" className="btn btn-danger btn-block" value="Edit Movie" />
                 </form>
             </div>
 

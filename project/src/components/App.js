@@ -20,7 +20,14 @@ class App extends React.Component {
         console.log(response);
         const data = await response.json();
         console.log(data);
-        this.setState({ movies: data })
+        this.setState({ movies: data }) 
+        this.getMovies();
+    }
+
+    async getMovies() {
+        const response = await axios.get("http://localhost:3002/movies");
+        this.setState({movies:response.data});
+        
     }
     // this is event functione and set state part next part is being update button side in MoveLisr.js page
     // this is function to delete movie with onclick
@@ -54,7 +61,6 @@ class App extends React.Component {
        this.setState ({
            movies : newMovieList
        })
-
    } */
 
 
@@ -63,26 +69,31 @@ class App extends React.Component {
     searchMovie = (event) => {
         // console.log(event.target.value);
         this.setState({ searchQuery: event.target.value });
-
-
-    AddMovie = async (movie) => {
-        await axios.post(`http://localhost:3002/movies/`, movie)
-        this.setState(
-            state => ({movies:state.movies.concat([movie])}),
-        )
-
-        }
     }
 
+    AddMovie = async (movie) => {
+            await axios.post(`http://localhost:3002/movies/`, movie)
+            this.setState(
+                state => ({ movies: state.movies.concat([movie]) }),
+            )   
+            this.getMovies();     
+    }
+
+    EditMovie = async (id,updatedMovie) => {
+        await axios.put(`http://localhost:3002/movies/${id}`, updatedMovie)
+        this.getMovies();
+             
+}
+ 
     render() {
 
         let filteredMovies = this.state.movies.filter(
             (movie) => {
                 return movie.name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1;
             }
-        ).sort( (a,b) => {
-                return a.id < b.id ? 1 : a.id > b.id ? -1 : 0;
-        } ); 
+        ).sort((a, b) => {
+            return a.id < b.id ? 1 : a.id > b.id ? -1 : 0;
+        });
 
         return (
 
@@ -90,7 +101,7 @@ class App extends React.Component {
 
                 <div className="container">
                     <Switch>
-                        <Route path="/" exact  render={() => (
+                        <Route path="/" exact render={() => (
                             <React.Fragment>
                                 <div className="row">
                                     <div className="col-lg-12">
@@ -109,19 +120,35 @@ class App extends React.Component {
                         )}>
                         </Route>
 
-                        
-                        <Route path="/"  render={({history}) => (
 
-                            <AddMovie 
-                            onAddMovie={(movie) => {this.addMovie(movie)
-                                history.push("/")}}
+                        <Route path="/Add" render={({ history }) => (
+
+                            <AddMovie
+                                onAddMovie={(movie) => {
+                                    this.AddMovie(movie)
+                                    history.push("/")
+                                }}
                             />
 
 
-                        )}>                            
+                        )}>
                         </Route>
 
-                        <Route path="/edit/:id" component={EditMovie} /> 
+                        <Route path="/edit/:id" render={(props) => (
+
+                            <EditMovie
+                                {...props}
+
+                                onEditMovie={(id, movie) => {
+                                    this.EditMovie(id, movie)                                   
+                                }
+                                }
+                            />
+
+
+                        )}>
+                        </Route>
+                        
 
 
                     </Switch>
