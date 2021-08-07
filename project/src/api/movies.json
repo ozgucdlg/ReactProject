@@ -45,7 +45,7 @@
     {
       "name": "The Tomorrow ",
       "rating": "5",
-      "overview": " async componentDidMount() {\n        const baseURL = \"http://localhost:3002/movies\";\n        const response = await fetch(baseURL);\n        console.log(response);\n        const data = await response.json();\n        console.log(data);\n        this.setState({ movies: data })\n    }",
+      "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg",
       "id": 13
     },
@@ -62,6 +62,13 @@
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/cE9SBjWMUK0HFxmT1cVFDtu5CLT.jpg",
       "overview": "Tragedy, betrayal and a mysterious discovery fuel a woman's vengeance for the loss of her tribe and family in this special episode of \"Kingdom.\"\nTragedy, betrayal and a mysterious discovery fuel a woman's vengeance for the loss of her tribe and family in this special episode of \"Kingdom.\"\nTragedy, betrayal and a mysterious discovery fuel a woman's vengeance for the loss of her tribe and family in this special episode of \"Kingdom.\"",
       "id": 15
+    },
+    {
+      "name": "Zack Snyder's Justice League",
+      "rating": "8.4",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
+      "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
+      "id": 16
     }
   ]
 }
