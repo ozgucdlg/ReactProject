@@ -66,9 +66,16 @@
     {
       "name": "Zack Snyder's Justice League",
       "rating": "8.4",
-      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
       "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
       "id": 16
+    },
+    {
+      "name": "ozguc dalga",
+      "rating": "9",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+      "overview": "the life of Ozzy",
+      "id": 17
     }
   ]
 }
