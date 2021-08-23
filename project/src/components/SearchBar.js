@@ -10,8 +10,9 @@ class SearchBar extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleFormSubmit}>
-                <div className="form-row mb-5" >
-                    <div className="col-10">
+                <br/>
+                <div className="row" >
+                    <div className="col-10"  >
                         <input
                             onChange={this.props.searchMovieProp}
                             type="text" className="form-control"
@@ -26,7 +27,11 @@ class SearchBar extends React.Component {
                             style={{ float: 'right' }}> Add Movie
                         </Link>
                     </div>
+
+                    
                 </div>
+
+                <br />
             </form>
 
 

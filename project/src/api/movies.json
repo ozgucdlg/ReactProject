@@ -22,11 +22,11 @@
       "id": 11
     },
     {
-      "id": 4,
       "name": "Rogue",
       "rating": 7.4,
-      "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-      "imageURL": "https://image.tmdb.org/t/p/w220_and_h330_face/uOw5JD8IlD546feZ6oxbIjvN66P.jpg"
+      "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.\nA new content has been added in order to make another update.",
+      "imageURL": "https://image.tmdb.org/t/p/w220_and_h330_face/uOw5JD8IlD546feZ6oxbIjvN66P.jpg",
+      "id": 4
     },
     {
       "name": "Project Power 2",
@@ -65,17 +65,24 @@
     },
     {
       "name": "Zack Snyder's Justice League",
-      "rating": "8.4",
-      "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
+      "rating": "8.9",
+      "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.   ",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
       "id": 16
     },
     {
       "name": "ozguc dalga",
       "rating": "9",
+      "overview": "the life of Ozguc dalga",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
-      "overview": "the life of Ozzy",
       "id": 17
+    },
+    {
+      "name": "Grey's Anatomy",
+      "rating": "8.2",
+      "overview": "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg",
+      "id": 18
     }
   ]
 }
