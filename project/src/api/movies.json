@@ -65,24 +65,31 @@
     },
     {
       "name": "Zack Snyder's Justice League",
-      "rating": "8.9",
+      "rating": "9.5",
       "overview": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.   ",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
       "id": 16
     },
     {
-      "name": "ozguc dalga",
-      "rating": "9",
+      "name": "Squid",
+      "rating": "9.9",
       "overview": "the life of Ozguc dalga",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
       "id": 17
     },
     {
       "name": "Grey's Anatomy",
-      "rating": "8.2",
+      "rating": "7.1",
       "overview": "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg",
       "id": 18
+    },
+    {
+      "name": "Emmerdale",
+      "rating": "4.4",
+      "overview": "This is not preferable movies for all watchers !....",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ualtuRRNYa9Fj61wSuBVcuvaVDP.jpg",
+      "id": 19
     }
   ]
 }
