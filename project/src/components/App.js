@@ -3,9 +3,9 @@ import React from 'react';
 import MovieList from './MovieList';
 import SearchBar from './SearchBar';
 import AddMovie from './AddMovie';
-import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import EditMovie from './EditMovie';
+import { movieData } from '../data/movieData';
 
 class App extends React.Component {
 
@@ -14,21 +14,10 @@ class App extends React.Component {
         searchQuery: ""
     }
 
-    async componentDidMount() {
-        const baseURL = "http://localhost:3002/movies";
-        const response = await fetch(baseURL);
-        console.log(response);
-        const data = await response.json();
-        console.log(data);
-        this.setState({ movies: data }) 
-        this.getMovies();
+    componentDidMount() {
+        this.setState({ movies: movieData.movies });
     }
 
-    async getMovies() {
-        const response = await axios.get("http://localhost:3002/movies");
-        this.setState({movies:response.data});
-        
-    }
     // this is event functione and set state part next part is being update button side in MoveLisr.js page
     // this is function to delete movie with onclick
     deleteMovie = (movie) => {
@@ -39,52 +28,29 @@ class App extends React.Component {
             movies: newMovieList
         })
     }
-    /*  FETCH API 
-     deleteMovie =  async (movie)=>{
-         const baseUrl =  `http://localhost:30002/movies/${movie.id}`
-         await fetch(baseUrl, {
-             method:"DELETE"        })
-          const newMovieList = this.state.movies.filter(
-              m =>m.id !==movie.id
-          );
-          this.setState ({
-              movies : newMovieList
-          })
-      } */
-
-    /*  AXIOS  API 
-   deleteMovie =  async (movie)=>{
-      axios.delete(`http://localhost:30002/movies/${movie.id}`)
-       const newMovieList = this.state.movies.filter(
-           m =>m.id !==movie.id
-       );
-       this.setState ({
-           movies : newMovieList
-       })
-   } */
-
-
-
 
     searchMovie = (event) => {
         // console.log(event.target.value);
         this.setState({ searchQuery: event.target.value });
     }
 
-    AddMovie = async (movie) => {
-            await axios.post(`http://localhost:3002/movies/`, movie)
-            this.setState(
-                state => ({ movies: state.movies.concat([movie]) }),
-            )   
-            this.getMovies();     
+    AddMovie = (movie) => {
+        const newMovie = {
+            ...movie,
+            id: this.state.movies.length + 1
+        };
+        this.setState(state => ({
+            movies: [...state.movies, newMovie]
+        }));
     }
 
-    EditMovie = async (id,updatedMovie) => {
-        await axios.put(`http://localhost:3002/movies/${id}`, updatedMovie)
-        this.getMovies();
-             
-}
- 
+    EditMovie = (id, updatedMovie) => {
+        const updatedMovies = this.state.movies.map(movie =>
+            movie.id === parseInt(id) ? { ...updatedMovie, id: parseInt(id) } : movie
+        );
+        this.setState({ movies: updatedMovies });
+    }
+
     render() {
 
         let filteredMovies = this.state.movies.filter(
