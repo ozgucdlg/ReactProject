@@ -5,7 +5,8 @@
             "src": "package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "build"
+                "distDir": "build",
+                "buildCommand": "npm run vercel-build"
             }
         }
     ],
@@ -14,7 +15,11 @@
             "handle": "filesystem"
         },
         {
-            "src": "/.*",
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
+        },
+        {
+            "src": "/(.*)",
             "dest": "/index.html"
         }
     ]
