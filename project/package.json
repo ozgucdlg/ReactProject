@@ -20,10 +20,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "vercel-build": "CI=false npm run build"
+    "vercel-build": "set NODE_OPTIONS=--openssl-legacy-provider && CI=false npm run build"
   },
   "eslintConfig": {
     "extends": [

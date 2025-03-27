@@ -1,16 +1,15 @@
 export const movieData = {
   "movies": [
     {
-      "id": 7,
+      "id": 1,
       "name": "The Matrix 3",
       "rating": 8.1,
       "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
       "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg"
     },
-   
     {
-      "id": 7,
-      "name": "The Matrix 3",
+      "id": 2,
+      "name": "The Matrix Reloaded",
       "rating": 8.1,
       "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
       "imageURL": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg"
@@ -88,7 +87,7 @@ export const movieData = {
     {
       "name": "Grey's Anatomy",
       "rating": "7.1",
-      "overview": "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
+      "overview": "Follows the personal and professional lives of a group of doctors at Seattle's Grey Sloan Memorial Hospital.",
       "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg",
       "id": 18
     },
