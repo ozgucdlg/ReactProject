@@ -5,18 +5,22 @@
             "src": "package.json",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "build",
-                "buildCommand": "npm run vercel-build"
+                "distDir": "build"
             }
         }
     ],
     "routes": [
         {
-            "handle": "filesystem"
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
         },
         {
-            "src": "/api/(.*)",
-            "dest": "/api/$1"
+            "src": "/favicon.ico",
+            "dest": "/favicon.ico"
+        },
+        {
+            "src": "/manifest.json",
+            "dest": "/manifest.json"
         },
         {
             "src": "/(.*)",
